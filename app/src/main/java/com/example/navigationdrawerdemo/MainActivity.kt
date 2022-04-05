@@ -30,16 +30,17 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        // TODO: сделать лого ИГУ с прозрачным фоном и адаптировать градиент в drawable/side_nav_bar
         val drawerLayout: DrawerLayout = binding.drawerLayout
+
+        // фрагменты будут переключаться в NavigationView
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        // TODO: добавить меню "О приложении"
+        // пункты меню содержатся в разметке menu/activity_main_drawer
         appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
-            ), drawerLayout
-        )
+            setOf(R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
